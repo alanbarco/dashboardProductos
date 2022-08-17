@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded",function(event){
     fetch('https://dawm-b8599-default-rtdb.firebaseio.com/collection.json')
     .then(response => response.json())
     .then(data =>{
-      document.getElementById("tablaComprador").innerHTML='';
+      document.getElementById("tablaBody").innerHTML='';
       let result = data.filter(obj => obj.productoNombre == nombre)
       console.log(result[0].comprador.nombre)
       for(let element of result){
@@ -17,7 +17,7 @@ window.addEventListener("DOMContentLoaded",function(event){
             <td>${element.valor}</td>  
           </tr>  
     </tbody> `
-      document.getElementById("tablaComprador").innerHTML +=plantilla;
+      document.getElementById("tablaBody").innerHTML +=plantilla;
       }
     }).catch(console.error);
   })
